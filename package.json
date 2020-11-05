@@ -1,8 +1,8 @@
 {
 	"private": true,
 	"scripts": {
-		"test": "jest --no-watchman",
-		"server": "nodemon index.js",
+		"test": "cross-env NODE_ENV=testing jest --no-watchman",
+		"server": "cross-env NODE_ENV=development nodemon index.js",
 		"start": "node index.js"
 	},
 	"devDependencies": {
@@ -17,5 +17,8 @@
 		"express": "^4.17.1",
 		"knex": "^0.21.6",
 		"sqlite3": "^5.0.0"
+	},
+	"jest": {
+		"testEnvironment": "node"
 	}
 }
